@@ -1,4 +1,4 @@
-# boilerplate-cli [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
+# boilerplate-cli [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
 CLI to search and download Keid's or others boilerplates on github.
 
@@ -47,5 +47,7 @@ $ boilerplate-cli create any-user/boilerplate-react my-project
 
 [npm-url]: https://npmjs.org/package/boilerplate-cli
 [npm-image]: https://badge.fury.io/js/boilerplate-cli.svg
+[travis-url]: http://travis-ci.org/keidrun/boilerplate-cli
+[travis-image]: https://secure.travis-ci.org/keidrun/boilerplate-cli.svg?branch=master
 [depstat-url]: https://david-dm.org/keidrun/boilerplate-cli
 [depstat-image]: https://david-dm.org/keidrun/boilerplate-cli.svg

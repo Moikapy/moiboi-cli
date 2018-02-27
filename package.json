@@ -1,6 +1,6 @@
 {
   "name": "boilerplate-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description":
     "CLI to search and download Keid's or others boilerplates on github.",
   "bin": {
