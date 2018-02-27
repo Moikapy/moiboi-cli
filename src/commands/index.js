@@ -3,7 +3,7 @@ module.exports = {
   home: require('./home'),
   search: require('./search'),
   create: require('./create'),
-  taps: require('./taps'),
+  authors: require('./authors'),
   tap: require('./tap'),
   untap: require('./untap'),
   reset: require('./reset')

@@ -1,6 +1,6 @@
 const config = require('../config');
 
-const tapsCommand = () => {
+const authorsCommand = () => {
   const authors = config.get()['authors'] || [];
 
   console.log('### Authors ###');
@@ -9,4 +9,4 @@ const tapsCommand = () => {
   });
 };
 
-module.exports = tapsCommand;
+module.exports = authorsCommand;

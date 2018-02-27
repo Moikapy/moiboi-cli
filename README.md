@@ -1,4 +1,4 @@
-# boilerplate-cli [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+# boilerplate-cli [![NPM version][npm-image]][npm-url] [![npm module downloads][npm-downloads-image]][npm-downloads-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
 CLI to search and download everyone's boilerplates on github.
 
@@ -16,19 +16,18 @@ $ npm install -g boilerplate-cli
 ## Usage
 
 ```bash
-$ bp -h
-bp [command]
+$ boil -h
+boil [command]
 
 commands:
-  bp list                            show all boilerpates
-  bp home [author_and_bilerpate]     go to a github repository
-  bp search [keyword]                search a boilerplate
-  bp create [boilerplate] [project]  install a boilerplate into a project
-                                           directory
-  bp taps                            show all authors of boilerplates
-  bp tap [author]                    add a new author of boilerplates
-  bp untap [author]                  remove a author of boilerplates
-  bp reset                           reset all configuration to default
+  boil list                            show all boilerpates
+  boil home [author_and_bilerpate]     go to the github repository
+  boil search [keyword]                search boilerplates
+  boil create [boilerplate] [project]  install the boilerplate into the project directory
+  boil authors                         show all authors of boilerplates
+  boil tap [author]                    add the new author of boilerplates
+  boil untap [author]                  remove the author of boilerplates
+  boil reset                           reset all configuration to default
 
 options:
   --version, -v
@@ -41,14 +40,16 @@ You can use this command to use everyone's boilerplates.
 And my boilerplates are included as default.
 
 ```bash
-$ bp tap any-user
-$ bp search react
-$ bp create any-user/boilerplate-react my-project
+$ boil tap any-user
+$ boil search react
+$ boil create any-user/boilerplate-react my-project
 ```
 
 [npm-url]: https://npmjs.org/package/boilerplate-cli
 [npm-image]: https://badge.fury.io/js/boilerplate-cli.svg
-[travis-url]: http://travis-ci.org/keidrun/boilerplate-cli
+[npm-downloads-url]: https://npmjs.org/package/boilerplate-cli
+[npm-downloads-image]: https://img.shields.io/npm/dt/boilerplate-cli.svg
+[travis-url]: https://travis-ci.org/keidrun/boilerplate-cli
 [travis-image]: https://secure.travis-ci.org/keidrun/boilerplate-cli.svg?branch=master
 [depstat-url]: https://david-dm.org/keidrun/boilerplate-cli
 [depstat-image]: https://david-dm.org/keidrun/boilerplate-cli.svg

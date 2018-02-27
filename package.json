@@ -1,16 +1,16 @@
 {
   "name": "boilerplate-cli",
   "version": "0.0.1",
-  "description":
-    "CLI to search and download everyone's boilerplates on github.",
+  "description": "CLI to search and download everyone's boilerplates on github.",
   "bin": {
-    "bp": "src/index.js"
+    "boil": "src/index.js"
   },
   "preferGlobal": true,
   "engines": {
     "node": ">=9.5.0"
   },
   "keywords": [
+    "boil",
     "boilerplate",
     "cli",
     "github",

@@ -6,7 +6,7 @@ const argv = yargs
   .command('list', 'show all boilerpates')
   .command(
     'home [author_and_bilerpate]',
-    'go to a github repository',
+    'go to the github repository',
     yargs => {
       yargs.positional('author_and_bilerpate', {
         describe: 'boilerpate to go',
@@ -14,14 +14,14 @@ const argv = yargs
       });
     }
   )
-  .command('search [keyword]', 'search a boilerplate', yargs => {
+  .command('search [keyword]', 'search boilerplates', yargs => {
     yargs.positional('keyword', {
       describe: 'keyword to search'
     });
   })
   .command(
     'create [boilerplate] [project]',
-    'install a boilerplate into a project directory',
+    'install the boilerplate into the project directory',
     yargs => {
       yargs.positional('boilerplate', {
         describe: 'boilerplate to use'
@@ -31,13 +31,13 @@ const argv = yargs
       });
     }
   )
-  .command('taps', 'show all authors of boilerplates')
-  .command('tap [author]', 'add a new author of boilerplates', yargs => {
+  .command('authors', 'show all authors of boilerplates')
+  .command('tap [author]', 'add the new author of boilerplates', yargs => {
     yargs.positional('author', {
       describe: 'author to add'
     });
   })
-  .command('untap [author]', 'remove a author of boilerplates', yargs => {
+  .command('untap [author]', 'remove the author of boilerplates', yargs => {
     yargs.positional('author', {
       describe: 'author to remove'
     });
@@ -58,8 +58,8 @@ if (command === 'list' || command === 'l') {
   commands.search(argv.keyword);
 } else if (command === 'create' || command === 'c') {
   commands.create(argv.boilerplate, argv.project);
-} else if (command === 'taps' || command === 'ts') {
-  commands.taps();
+} else if (command === 'authors' || command === 'a') {
+  commands.authors();
 } else if (command === 'tap' || command === 't') {
   commands.tap(argv.author);
 } else if (command === 'untap' || command === 'ut') {
