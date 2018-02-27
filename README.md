@@ -1,6 +1,6 @@
 # boilerplate-cli [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
-CLI to search and download Keid's or others boilerplates on github.
+CLI to search and download everyone's boilerplates on github.
 
 ## Required
 
@@ -10,25 +10,25 @@ CLI to search and download Keid's or others boilerplates on github.
 ## Install
 
 ```bash
-$ npm install boilerplate-cli -g
+$ npm install -g boilerplate-cli
 ```
 
 ## Usage
 
 ```bash
-$ boilerplate-cli -h
-boilerplate-cli [command]
+$ bp -h
+bp [command]
 
 commands:
-  boilerplate-cli list                            show all boilerpates
-  boilerplate-cli home [author_and_bilerpate]     go to a github repository
-  boilerplate-cli search [keyword]                search a boilerplate
-  boilerplate-cli create [boilerplate] [project]  install a boilerplate into a project
+  bp list                            show all boilerpates
+  bp home [author_and_bilerpate]     go to a github repository
+  bp search [keyword]                search a boilerplate
+  bp create [boilerplate] [project]  install a boilerplate into a project
                                            directory
-  boilerplate-cli taps                            show all authors of boilerplates
-  boilerplate-cli tap [author]                    add a new author of boilerplates
-  boilerplate-cli untap [author]                  remove a author of boilerplates
-  boilerplate-cli reset                           reset all configuration to default
+  bp taps                            show all authors of boilerplates
+  bp tap [author]                    add a new author of boilerplates
+  bp untap [author]                  remove a author of boilerplates
+  bp reset                           reset all configuration to default
 
 options:
   --version, -v
@@ -38,11 +38,12 @@ options:
 ## How to use everyone's boilerplates
 
 You can use this command to use everyone's boilerplates.
+And my boilerplates are included as default.
 
 ```bash
-$ boilerplate-cli tap any-user
-$ boilerplate-cli search react
-$ boilerplate-cli create any-user/boilerplate-react my-project
+$ bp tap any-user
+$ bp search react
+$ bp create any-user/boilerplate-react my-project
 ```
 
 [npm-url]: https://npmjs.org/package/boilerplate-cli
