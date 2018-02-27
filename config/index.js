@@ -14,13 +14,18 @@ const update = updatedConfig => {
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(updatedConfig));
 };
 
-const includes = key => {
-  const value = get()[key];
-  return !value ? false : true;
+const isExistingAuthor = author => {
+  const authors = get()['authors'] || [];
+  const sameAuthors = authors.filter(thisAuthor => thisAuthor === author);
+  if (sameAuthors.length === 0) {
+    return false;
+  } else {
+    return true;
+  }
 };
 
 module.exports = {
   get,
   update,
-  includes
+  isExistingAuthor
 };

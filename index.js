@@ -60,9 +60,9 @@ if (command === 'list' || command === 'l') {
 } else if (command === 'taps' || command === 'ts') {
   commands.taps();
 } else if (command === 'tap' || command === 't') {
-  commands.tap();
+  commands.tap(argv.author);
 } else if (command === 'untap' || command === 'ut') {
-  commands.untap();
+  commands.untap(argv.author);
 } else if (command === 'reset' || command === 'r') {
   commands.reset();
 } else if (!command) {

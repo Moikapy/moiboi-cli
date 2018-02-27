@@ -35,4 +35,15 @@ const fetchBoilerplates = () => {
   });
 };
 
-module.exports = { fetchBoilerplates };
+const isExistingUser = user => {
+  return axios
+    .get(`https://api.github.com/users/${user}`)
+    .then(res => {
+      return true;
+    })
+    .catch(err => {
+      return false;
+    });
+};
+
+module.exports = { fetchBoilerplates, isExistingUser };
