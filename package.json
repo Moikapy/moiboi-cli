@@ -1,0 +1,14 @@
+{
+  "name": "boilerplate-cli",
+  "version": "0.0.1",
+  "description": "CLI to search and download Keid's boilerplates.",
+  "main": "index.js",
+  "repository": "git@github.com:keidrun/boilerplate-cli.git",
+  "author": "keidrun",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "readline-sync": "^1.4.9",
+    "yargs": "^11.0.0"
+  }
+}

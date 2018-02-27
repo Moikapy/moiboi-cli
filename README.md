@@ -1,2 +1,3 @@
 # boilerplate-cli
-Original Boilerplate Generator.
+
+CLI to search and download Keid's boilerplates.
