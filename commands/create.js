@@ -1,5 +1,53 @@
-const createCommand = () => {
-  console.log('Create command');
+const { fetchBoilerplates } = require('../helpers/githubRequest');
+const readlineSync = require('readline-sync');
+const exec = require('child_process').exec;
+const rimraf = require('rimraf');
+
+const createCommand = (boilerplateName, projectDirectory) => {
+  fetchBoilerplates().then(boilerpates => {
+    const targetBoilerpate = boilerpates.filter(boilerpate =>
+      boilerpate.includes(boilerplateName)
+    )[0];
+    const targetDirctory =
+      projectDirectory === '.' || !projectDirectory
+        ? `${process.cwd()}`
+        : `${process.cwd()}/${projectDirectory}`;
+
+    if (!targetBoilerpate) {
+      console.log(`The boilerplate was not found: ${boilerplateName}`);
+    } else {
+      console.log('Your Choice => ');
+      console.log(`Boilerpate: ${targetBoilerpate}`);
+      console.log(`Directory: ${targetDirctory}`);
+      const answer = readlineSync.question(
+        'The above boilerplate will be created. Is it ok? (y/n) > '
+      );
+      console.log(answer);
+      if (answer === 'y') {
+        let firstGitCommand, cloneGitCommand;
+        exec(`git --version`, (err, stdout, stderr) => {
+          if (err) return console.log(`You must install 'git' in advance.`);
+
+          exec(
+            `git clone https://github.com/${targetBoilerpate} ${targetDirctory}`,
+            (err, stdout, stderr) => {
+              if (err)
+                return console.log(`Faild to clone the boilerpate: ${stderr}`);
+
+              rimraf(`${targetDirctory}/.git`, err => {
+                if (err)
+                  return console.log(
+                    `Faild to remove exsting git files: ${stderr}`
+                  );
+
+                console.log('The boilerplate was created!');
+              });
+            }
+          );
+        });
+      }
+    }
+  });
 };
 
 module.exports = createCommand;

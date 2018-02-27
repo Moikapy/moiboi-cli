@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "readline-sync": "^1.4.9",
+    "rimraf": "^2.6.2",
     "yargs": "^11.0.0"
   }
 }

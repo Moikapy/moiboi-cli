@@ -1,5 +1,4 @@
 const yargs = require('yargs');
-const readlineSync = require('readline-sync');
 const commands = require('./commands');
 
 const argv = yargs
@@ -54,7 +53,7 @@ if (command === 'list' || command === 'l') {
 } else if (command === 'search' || command === 's') {
   commands.search(argv.keyword);
 } else if (command === 'create' || command === 'c') {
-  commands.create();
+  commands.create(argv.boilerplate, argv.project);
 } else if (command === 'taps' || command === 'ts') {
   commands.taps();
 } else if (command === 'tap' || command === 't') {
@@ -62,14 +61,7 @@ if (command === 'list' || command === 'l') {
 } else if (command === 'untap' || command === 'ut') {
   commands.home();
 } else if (command === 'reset' || command === 'r') {
-  const answer = readlineSync.question(
-    'All configurations will reset. Is it ok? (y/n) > '
-  );
-  console.log(answer);
-  if (answer === 'y') {
-    commands.reset();
-    console.log('All configurations resetted.');
-  }
+  commands.reset();
 } else if (!command) {
   yargs.showHelp();
 } else {
