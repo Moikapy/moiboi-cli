@@ -52,7 +52,7 @@ if (command === 'list' || command === 'l') {
 } else if (command === 'home' || command === 'H') {
   commands.home();
 } else if (command === 'search' || command === 's') {
-  commands.search();
+  commands.search(argv.keyword);
 } else if (command === 'create' || command === 'c') {
   commands.create();
 } else if (command === 'taps' || command === 'ts') {
