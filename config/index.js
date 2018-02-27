@@ -14,7 +14,13 @@ const update = updatedConfig => {
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(updatedConfig));
 };
 
+const includes = key => {
+  const value = get()[key];
+  return !value ? false : true;
+};
+
 module.exports = {
   get,
-  update
+  update,
+  includes
 };

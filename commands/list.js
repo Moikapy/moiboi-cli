@@ -3,6 +3,7 @@ const { showItems } = require('../helpers/formattedConsole');
 
 const listCommand = () => {
   fetchBoilerplates().then(boilerpates => {
+    console.log('### Available Boilerplates ###');
     showItems(boilerpates);
   });
 };

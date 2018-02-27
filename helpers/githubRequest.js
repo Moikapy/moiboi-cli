@@ -28,8 +28,8 @@ const fetchBoilerplates = () => {
     })
   ).then(arrayList => {
     return Promise.resolve(
-      arrayList.reduce((result, array) => {
-        return result.concat(array);
+      arrayList.reduce((preArray, array) => {
+        return preArray.concat(array);
       })
     );
   });

@@ -6,6 +6,7 @@ const searchCommand = keyword => {
     const items = boilerpates.filter(boilerpate =>
       boilerpate.includes(keyword)
     );
+    console.log('### Search Results ###');
     showItems(items);
   });
 };

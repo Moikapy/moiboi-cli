@@ -1,5 +1,12 @@
+const config = require('../config');
+
 const tapsCommand = () => {
-  console.log('Taps command');
+  const authors = config.get()['authors'] || [];
+
+  console.log('### Authors ###');
+  authors.forEach(item => {
+    console.log(item);
+  });
 };
 
 module.exports = tapsCommand;

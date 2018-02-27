@@ -3,16 +3,19 @@ const commands = require('./commands');
 
 const argv = yargs
   .command('list', 'show all boilerpates')
-  .command('home [author/boilerpate]', 'go to a github repository', yargs => {
-    yargs.positional('authorAndBoilerpate', {
-      describe: 'boilerpate to go',
-      default: 'keidrun/boilerplate-cli'
-    });
-  })
+  .command(
+    'home [author_and_bilerpate]',
+    'go to a github repository',
+    yargs => {
+      yargs.positional('author_and_bilerpate', {
+        describe: 'boilerpate to go',
+        default: 'keidrun/boilerplate-cli'
+      });
+    }
+  )
   .command('search [keyword]', 'search a boilerplate', yargs => {
     yargs.positional('keyword', {
-      describe: 'keyword to search',
-      default: 'https://github.com/keidrun/boilerplate-cli'
+      describe: 'keyword to search'
     });
   })
   .command(
@@ -49,7 +52,7 @@ console.log(command);
 if (command === 'list' || command === 'l') {
   commands.list();
 } else if (command === 'home' || command === 'H') {
-  commands.home();
+  commands.home(argv.author_and_bilerpate);
 } else if (command === 'search' || command === 's') {
   commands.search(argv.keyword);
 } else if (command === 'create' || command === 'c') {
@@ -57,9 +60,9 @@ if (command === 'list' || command === 'l') {
 } else if (command === 'taps' || command === 'ts') {
   commands.taps();
 } else if (command === 'tap' || command === 't') {
-  commands.home();
+  commands.tap();
 } else if (command === 'untap' || command === 'ut') {
-  commands.home();
+  commands.untap();
 } else if (command === 'reset' || command === 'r') {
   commands.reset();
 } else if (!command) {
