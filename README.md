@@ -20,15 +20,15 @@ $ boilerplate-cli -h
 boilerplate-cli [command]
 
 commands:
-  index.js list                            show all boilerpates
-  index.js home [author_and_bilerpate]     go to a github repository
-  index.js search [keyword]                search a boilerplate
-  index.js create [boilerplate] [project]  install a boilerplate into a project
+  boilerplate-cli list                            show all boilerpates
+  boilerplate-cli home [author_and_bilerpate]     go to a github repository
+  boilerplate-cli search [keyword]                search a boilerplate
+  boilerplate-cli create [boilerplate] [project]  install a boilerplate into a project
                                            directory
-  index.js taps                            show all authors of boilerplates
-  index.js tap [author]                    add a new author of boilerplates
-  index.js untap [author]                  remove a author of boilerplates
-  index.js reset                           reset all configuration to default
+  boilerplate-cli taps                            show all authors of boilerplates
+  boilerplate-cli tap [author]                    add a new author of boilerplates
+  boilerplate-cli untap [author]                  remove a author of boilerplates
+  boilerplate-cli reset                           reset all configuration to default
 
 options:
   --version, -v

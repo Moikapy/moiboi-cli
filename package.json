@@ -1,6 +1,6 @@
 {
   "name": "boilerplate-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description":
     "CLI to search and download Keid's or others boilerplates on github.",
   "bin": {
@@ -10,7 +10,7 @@
   "engines": {
     "node": ">=9.5.0"
   },
-  "keywords": ["boilerplate", "cli", "github"],
+  "keywords": ["boilerplate", "cli", "github", "search", "create"],
   "repository": "git@github.com:keidrun/boilerplate-cli.git",
   "author": "keidrun",
   "license": "MIT",
