@@ -1,8 +1,16 @@
 {
   "name": "boilerplate-cli",
   "version": "0.0.1",
-  "description": "CLI to search and download Keid's boilerplates.",
-  "main": "index.js",
+  "description":
+    "CLI to search and download Keid's or others boilerplates on github.",
+  "bin": {
+    "boilerplate-cli": "src/index.js"
+  },
+  "preferGlobal": true,
+  "engines": {
+    "node": ">=9.5.0"
+  },
+  "keywords": ["boilerplate", "cli", "github"],
   "repository": "git@github.com:keidrun/boilerplate-cli.git",
   "author": "keidrun",
   "license": "MIT",
@@ -14,6 +22,13 @@
     "yargs": "^11.0.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/index.js",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.1",
+    "nock": "^9.2.2",
+    "sinon": "^4.4.2"
   }
 }
