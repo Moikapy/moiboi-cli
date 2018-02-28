@@ -58,4 +58,20 @@ const isExistingUser = user => {
     });
 };
 
-module.exports = { fetchBoilerplates, fetchRepoNames, isExistingUser };
+const isExistingRepo = (user, repo) => {
+  return axios
+    .get(`https://github.com/${user}/${repo}`)
+    .then(res => {
+      return true;
+    })
+    .catch(err => {
+      return false;
+    });
+};
+
+module.exports = {
+  fetchBoilerplates,
+  fetchRepoNames,
+  isExistingUser,
+  isExistingRepo
+};

@@ -21,7 +21,7 @@ boil [command]
 
 Commands:
   boil list                            show all boilerpates                               [aliases: l]
-  boil home [author_and_bilerpate]     go to the github repository                        [aliases: H]
+  boil home [author/bilerpate]         go to the github repository                        [aliases: H]
   boil search [keyword]                search boilerplates                                [aliases: s]
   boil create [boilerplate] [project]  install the boilerplate into the project directory [aliases: c]
   boil authors                         show all authors of boilerplates                   [aliases: a]

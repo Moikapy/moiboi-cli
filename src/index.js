@@ -9,11 +9,11 @@ const argv = yargs
     desc: 'show all boilerpates'
   })
   .command({
-    command: 'home [author_and_bilerpate]',
+    command: 'home [author/bilerpate]',
     aliases: ['H'],
     desc: 'go to the github repository',
     builder: yargs => {
-      yargs.positional('author_and_bilerpate', {
+      yargs.positional('author/bilerpate', {
         describe: 'boilerpate to go',
         default: 'keidrun/boilerplate-cli'
       });
@@ -86,7 +86,7 @@ const command = argv._[0];
 if (command === 'list' || command === 'l') {
   commands.list();
 } else if (command === 'home' || command === 'H') {
-  commands.home(argv.author_and_bilerpate);
+  commands.home(argv['author/bilerpate']);
 } else if (command === 'search' || command === 's') {
   commands.search(argv.keyword, argv.global);
 } else if (command === 'create' || command === 'c') {
