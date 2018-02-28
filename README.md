@@ -1,4 +1,4 @@
-# boilerplate-cli [![NPM version][npm-image]][npm-url] [![npm module downloads][npm-downloads-image]][npm-downloads-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+# boilerplate-cli [![NPM version][npm-image]][npm-url] [![npm module downloads][npm-downloads-image]][npm-downloads-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url] [![License: MIT][license-image]][license-url]
 
 CLI to search and download everyone's boilerplates on github.
 
@@ -63,3 +63,5 @@ $ boil create any-user/boilerplate-bootstrap4 my-project -g
 [travis-image]: https://secure.travis-ci.org/keidrun/boilerplate-cli.svg?branch=master
 [depstat-url]: https://david-dm.org/keidrun/boilerplate-cli
 [depstat-image]: https://david-dm.org/keidrun/boilerplate-cli.svg
+[license-url]: https://opensource.org/licenses/MIT
+[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
