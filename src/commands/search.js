@@ -1,14 +1,26 @@
-const { fetchBoilerplates } = require('../helpers/githubRequest');
+const {
+  fetchBoilerplates,
+  fetchRepoNames
+} = require('../helpers/githubRequest');
 const { showItems } = require('../helpers/formattedConsole');
 
-const searchCommand = keyword => {
-  fetchBoilerplates().then(boilerpates => {
-    const items = boilerpates.filter(boilerpate =>
-      boilerpate.includes(keyword)
-    );
-    console.log('### Search Results ###');
-    showItems(items);
-  });
+const searchCommand = (keyword, isGlobal) => {
+  if (!keyword) return console.log('Any keyword is missing.');
+
+  console.log('### Search Results ###');
+
+  if (isGlobal) {
+    fetchRepoNames(keyword).then(repos => {
+      showItems(repos);
+    });
+  } else {
+    fetchBoilerplates().then(boilerpates => {
+      const items = boilerpates.filter(boilerpate =>
+        boilerpate.includes(keyword)
+      );
+      showItems(items);
+    });
+  }
 };
 
 module.exports = searchCommand;

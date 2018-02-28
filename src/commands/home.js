@@ -13,10 +13,11 @@ const homeCommand = authorAndBoilerpate => {
     const items = boilerplates.filter(boilerpate =>
       boilerpate.includes(authorAndBoilerpate)
     );
-    if (!items[0])
+    if (!items[0]) {
       return console.log(
         `The repository was not found: ${authorAndBoilerpate}`
       );
+    }
 
     const url = `https://github.com/${items[0]}`;
     opener(url, (err, stdout, stderr) => {

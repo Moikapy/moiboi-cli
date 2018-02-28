@@ -3,26 +3,37 @@ const yargs = require('yargs');
 const commands = require('./commands');
 
 const argv = yargs
-  .command('list', 'show all boilerpates')
-  .command(
-    'home [author_and_bilerpate]',
-    'go to the github repository',
-    yargs => {
+  .command({
+    command: 'list',
+    aliases: ['l'],
+    desc: 'show all boilerpates'
+  })
+  .command({
+    command: 'home [author_and_bilerpate]',
+    aliases: ['H'],
+    desc: 'go to the github repository',
+    builder: yargs => {
       yargs.positional('author_and_bilerpate', {
         describe: 'boilerpate to go',
         default: 'keidrun/boilerplate-cli'
       });
     }
-  )
-  .command('search [keyword]', 'search boilerplates', yargs => {
-    yargs.positional('keyword', {
-      describe: 'keyword to search'
-    });
   })
-  .command(
-    'create [boilerplate] [project]',
-    'install the boilerplate into the project directory',
-    yargs => {
+  .command({
+    command: 'search [keyword]',
+    aliases: ['s'],
+    desc: 'search boilerplates',
+    builder: yargs => {
+      yargs.positional('keyword', {
+        describe: 'keyword to search'
+      });
+    }
+  })
+  .command({
+    command: 'create [boilerplate] [project]',
+    aliases: ['c'],
+    desc: 'install the boilerplate into the project directory',
+    builder: yargs => {
       yargs.positional('boilerplate', {
         describe: 'boilerplate to use'
       });
@@ -30,34 +41,56 @@ const argv = yargs
         describe: 'project directory name to install'
       });
     }
-  )
-  .command('authors', 'show all authors of boilerplates')
-  .command('tap [author]', 'add the new author of boilerplates', yargs => {
-    yargs.positional('author', {
-      describe: 'author to add'
-    });
   })
-  .command('untap [author]', 'remove the author of boilerplates', yargs => {
-    yargs.positional('author', {
-      describe: 'author to remove'
-    });
+  .command({
+    command: 'authors',
+    aliases: ['a'],
+    desc: 'show all authors of boilerplates'
   })
-  .command('reset', 'reset all configuration to default')
+  .command({
+    command: 'tap [author]',
+    aliases: ['t'],
+    desc: 'add the new author of boilerplates',
+    builder: yargs => {
+      yargs.positional('author', {
+        describe: 'author to add'
+      });
+    }
+  })
+  .command({
+    command: 'untap [author]',
+    aliases: ['ut'],
+    desc: 'remove the author of boilerplates',
+    builder: yargs => {
+      yargs.positional('author', {
+        describe: 'author to remove'
+      });
+    }
+  })
+  .command({
+    command: 'reset',
+    aliases: ['r'],
+    desc: 'reset all configuration to default'
+  })
+  .option('global', {
+    describe: 'expand the range to search and create',
+    alias: 'g',
+    default: false
+  })
   .help()
   .alias('help', 'h')
   .alias('version', 'v').argv;
 
 const command = argv._[0];
 
-console.log(command);
 if (command === 'list' || command === 'l') {
   commands.list();
 } else if (command === 'home' || command === 'H') {
   commands.home(argv.author_and_bilerpate);
 } else if (command === 'search' || command === 's') {
-  commands.search(argv.keyword);
+  commands.search(argv.keyword, argv.global);
 } else if (command === 'create' || command === 'c') {
-  commands.create(argv.boilerplate, argv.project);
+  commands.create(argv.boilerplate, argv.project, argv.global);
 } else if (command === 'authors' || command === 'a') {
   commands.authors();
 } else if (command === 'tap' || command === 't') {

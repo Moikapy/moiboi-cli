@@ -1,10 +1,15 @@
-const { fetchBoilerplates } = require('../helpers/githubRequest');
+const {
+  fetchBoilerplates,
+  fetchRepoNames
+} = require('../helpers/githubRequest');
 const readlineSync = require('readline-sync');
 const exec = require('child_process').exec;
 const rimraf = require('rimraf');
 
-const createCommand = (boilerplateName, projectDirectory) => {
-  fetchBoilerplates().then(boilerpates => {
+const createCommand = (boilerplateName, projectDirectory, isGlobal) => {
+  const fetch = isGlobal ? fetchRepoNames : fetchBoilerplates;
+
+  fetch().then(boilerpates => {
     const targetBoilerpate = boilerpates.filter(boilerpate =>
       boilerpate.includes(boilerplateName)
     )[0];

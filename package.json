@@ -1,7 +1,8 @@
 {
   "name": "boilerplate-cli",
-  "version": "0.0.1",
-  "description": "CLI to search and download everyone's boilerplates on github.",
+  "version": "0.1.0",
+  "description":
+    "CLI to search and download everyone's boilerplates on github.",
   "bin": {
     "boil": "src/index.js"
   },
@@ -32,7 +33,8 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "mocha"
+    "test": "mocha",
+    "watch": "mocha --watch"
   },
   "devDependencies": {
     "chai": "^4.1.2",
