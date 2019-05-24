@@ -61,7 +61,7 @@ $ moiboi create github-username/bootstrap4 my-project -g
 [npm-downloads-image]: https://img.shields.io/npm/dt/moiboi-cli.svg
 [travis-url]: https://travis-ci.org/moikapy/moiboi-cli
 [travis-image]: https://secure.travis-ci.org/moikapy/moiboi-cli.svg?branch=master
-[depstat-url]: https://david-dm.org/moikpay/moiboi-cli
+[depstat-url]: https://david-dm.org/moikapy/moiboi-cli
 [depstat-image]: https://david-dm.org/moikapy/moiboi-cli.svg
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
