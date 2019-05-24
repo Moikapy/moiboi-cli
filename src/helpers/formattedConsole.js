@@ -3,7 +3,7 @@ const showItems = items => {
     console.log(item);
   });
 
-  console.log(`Total: ${items.length}`);
+  console.log(`Total: ${items.length} 😎`);
 };
 
 module.exports = {

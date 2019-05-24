@@ -19,19 +19,19 @@ const createCommand = (boilerplateName, projectDirectory, isGlobal) => {
         : `${process.cwd()}/${projectDirectory}`;
 
     if (!targetBoilerpate) {
-      console.log(`Moiboi couldn't find: ${boilerplateName}`);
+      console.log(`Moiboi couldn't find 😅: ${boilerplateName}`);
     } else {
       console.log('Your Choice => ');
       console.log(`Boilerpate: ${targetBoilerpate}`);
       console.log(`Directory: ${targetDirctory}`);
       const answer = readlineSync.question(
-        'The above boilerplate will be created by Moiboi. Is that ok? (y/n) > '
+        'The above boilerplate will be created by Moiboi. Is that ok 🤔? (Y/n) '
       );
       console.log(answer);
       if (answer === 'y') {
         let firstGitCommand, cloneGitCommand;
         exec(`git --version`, (err, stdout, stderr) => {
-          if (err) return console.log(`You must install 'git' in advance.`);
+          if (err) return console.log(`You must install 'git' in advance 🤓.`);
 
           exec(
             `git clone https://github.com/${targetBoilerpate} ${targetDirctory}`,
@@ -42,10 +42,10 @@ const createCommand = (boilerplateName, projectDirectory, isGlobal) => {
               rimraf(`${targetDirctory}/.git`, err => {
                 if (err)
                   return console.log(
-                    `Faild to remove exsting git files: ${stderr}`
+                    `Moiboi failed to remove exsiting git files 😢: ${stderr}`
                   );
 
-                console.log('The boilerplate was created by Moiboi!');
+                console.log('The boilerplate was created by Moiboi!! 🔥🎉');
               });
             }
           );

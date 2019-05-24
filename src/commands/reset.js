@@ -7,7 +7,7 @@ const DEFAULT_JSON = {
 
 const resetCommand = () => {
   const answer = readlineSync.question(
-    'Moiboi will reset all Configurations. Is it ok? (y/n) > '
+    'Moiboi will reset all Configurations. Is it ok 🤔? (Y/n) '
   );
   console.log(answer);
   if (answer === 'y') {

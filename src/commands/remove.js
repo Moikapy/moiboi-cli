@@ -1,6 +1,6 @@
 const config = require('../config');
 
-const untapCommand = author => {
+const removeCommand = author => {
   if (config.isExistingAuthor(author)) {
     let newConfig = config.get();
     const newAuthors = newConfig['authors'].filter(
@@ -12,4 +12,4 @@ const untapCommand = author => {
   }
 };
 
-module.exports = untapCommand;
+module.exports = removeCommand;

@@ -5,7 +5,7 @@ const {
 const { showItems } = require('../helpers/formattedConsole');
 
 const searchCommand = (keyword, isGlobal) => {
-  if (!keyword) return console.log('A keyword is missing.');
+  if (!keyword) return console.log('A keyword is missing... 😅');
 
   console.log('🔎 Search Results 🔍');
 

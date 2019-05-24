@@ -4,7 +4,7 @@ module.exports = {
   search: require('./search'),
   create: require('./create'),
   authors: require('./authors'),
-  tap: require('./tap'),
-  untap: require('./untap'),
+  add: require('./add'),
+  remove: require('./remove'),
   reset: require('./reset')
 };
