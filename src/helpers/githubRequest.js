@@ -13,7 +13,7 @@ const _getFetchURLs = () => {
   });
 };
 
-const fetchBoilerplates = () => {
+const fetchRepositories = () => {
   const urls = _getFetchURLs();
 
   return Promise.all(
@@ -85,14 +85,16 @@ const renameProjectJson = (targetDirctory, projectDirectory) => {
       if (err) return console.log(err);
       JSON.stringify(file);
       console.log("writing to " + fileName);
+      console.log('\n')
+      console.log("The Project was created by 🦊   Moiboi!! 🔥  🎉");
     });
   }
-  console.log("The Project was created by 🦊   Moiboi!! 🔥  🎉");
+  
 };
 
 module.exports = {
   renameProjectJson,
-  fetchBoilerplates,
+  fetchRepositories,
   fetchRepoNames,
   isExistingUser,
   isExistingRepo
