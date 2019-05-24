@@ -1,6 +1,6 @@
 {
   "name": "moiboi-cli",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "CLI using github to turn repos into boilerplates.",
   "bin": {
     "moiboi": "src/index.js"
