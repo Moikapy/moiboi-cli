@@ -1,7 +1,7 @@
 const config = require('../config');
 const { isExistingUser } = require('../helpers/githubRequest');
 
-const tapCommand = author => {
+const addCommand = author => {
   isExistingUser(author).then(isExisted => {
     if (isExisted) {
       let newConfig = config.get();
@@ -20,4 +20,4 @@ const tapCommand = author => {
   });
 };
 
-module.exports = tapCommand;
+module.exports = addCommand;
