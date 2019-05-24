@@ -2,17 +2,17 @@ const config = require('../config');
 const readlineSync = require('readline-sync');
 
 const DEFAULT_JSON = {
-  authors: ['keidrun']
+  authors: ['moikapy','nodegg']
 };
 
 const resetCommand = () => {
   const answer = readlineSync.question(
-    'All configurations will be resetted. Is it ok? (y/n) > '
+    'Moiboi will reset all Configurations. Is it ok? (y/n) > '
   );
   console.log(answer);
   if (answer === 'y') {
     config.update(DEFAULT_JSON);
-    console.log('All configurations were resetted.');
+    console.log('Moiboi reset all Configurations 🐱‍🐉🔥');
   }
 };
 

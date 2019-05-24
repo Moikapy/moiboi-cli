@@ -3,9 +3,9 @@ const config = require('../config');
 const authorsCommand = () => {
   const authors = config.get()['authors'] || [];
 
-  console.log('### Authors ###');
+  console.log('📚  Authors 📚');
   authors.forEach(item => {
-    console.log(item);
+    console.log('🦑 ',item);
   });
 };
 

@@ -8,7 +8,7 @@ const untapCommand = author => {
     );
     newConfig['authors'] = newAuthors;
     config.update(newConfig);
-    console.log(`Untapped ${author}`);
+    console.log(`Removed ${author} 💔`);
   }
 };
 

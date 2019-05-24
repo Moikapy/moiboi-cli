@@ -1,8 +1,8 @@
 const axios = require('axios');
 const config = require('../config');
 
-const APP_NAME = 'boilerplate-cli';
-const DEFAULT_AUTHOR = 'keidurn';
+const APP_NAME = 'moiboi-cli';
+const DEFAULT_AUTHOR = 'moikapy';
 const PAGE_LIMIT = 100;
 
 const _getFetchURLs = () => {
@@ -21,9 +21,9 @@ const fetchBoilerplates = () => {
         return res.data
           .filter(
             item =>
-              item.name.includes('boilerplate') && !item.name.includes(APP_NAME)
+              !item.name.includes(APP_NAME)
           )
-          .map(item => item.full_name);
+          .map(item => item.full_name.toLowerCase());
       });
     })
   ).then(arrayList => {
@@ -40,7 +40,7 @@ const fetchRepoNames = keyword => {
 
   return axios
     .get(
-      `https://api.github.com/search/repositories?q=boilerplate${keywordParam}&sort=stars`
+      `https://api.github.com/search/repositories?q=${keywordParam}&sort=stars`
     )
     .then(res => {
       return res.data.items.map(item => item.full_name);

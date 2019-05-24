@@ -5,24 +5,24 @@ const commands = require('./commands');
 const argv = yargs
   .command({
     command: 'list',
-    aliases: ['l'],
-    desc: 'show all boilerpates'
+    aliases: ['L'],
+    desc: 'show all repos'
   })
   .command({
-    command: 'home [author/bilerpate]',
+    command: 'home [author/repo]',
     aliases: ['H'],
     desc: 'go to the github repository',
     builder: yargs => {
-      yargs.positional('author/bilerpate', {
-        describe: 'boilerpate to go',
-        default: 'keidrun/boilerplate-cli'
+      yargs.positional('author/repo', {
+        describe: 'goes to repo',
+        default: 'moikapy/moiboi-cli'
       });
     }
   })
   .command({
     command: 'search [keyword]',
-    aliases: ['s'],
-    desc: 'search boilerplates',
+    aliases: ['S'],
+    desc: 'search repo',
     builder: yargs => {
       yargs.positional('keyword', {
         describe: 'keyword to search'
@@ -30,12 +30,12 @@ const argv = yargs
     }
   })
   .command({
-    command: 'create [boilerplate] [project]',
-    aliases: ['c'],
-    desc: 'install the boilerplate into the project directory',
+    command: 'create [repo] [project]',
+    aliases: ['C'],
+    desc: 'install the repo as boilerplate into the project directory',
     builder: yargs => {
-      yargs.positional('boilerplate', {
-        describe: 'boilerplate to use'
+      yargs.positional('repo', {
+        describe: 'repo to use'
       });
       yargs.positional('project', {
         describe: 'project directory name to install'
@@ -44,12 +44,12 @@ const argv = yargs
   })
   .command({
     command: 'authors',
-    aliases: ['a'],
+    aliases: ['A'],
     desc: 'show all authors of boilerplates'
   })
   .command({
     command: 'tap [author]',
-    aliases: ['t'],
+    aliases: ['T'],
     desc: 'add the new author of boilerplates',
     builder: yargs => {
       yargs.positional('author', {
@@ -69,7 +69,7 @@ const argv = yargs
   })
   .command({
     command: 'reset',
-    aliases: ['r'],
+    aliases: ['R'],
     desc: 'reset all configuration to default'
   })
   .option('global', {
@@ -83,21 +83,21 @@ const argv = yargs
 
 const command = argv._[0];
 
-if (command === 'list' || command === 'l') {
+if (command === 'list' || command === 'L') {
   commands.list();
 } else if (command === 'home' || command === 'H') {
   commands.home(argv['author/bilerpate']);
-} else if (command === 'search' || command === 's') {
+} else if (command === 'search' || command === 'S') {
   commands.search(argv.keyword, argv.global);
-} else if (command === 'create' || command === 'c') {
+} else if (command === 'create' || command === 'C') {
   commands.create(argv.boilerplate, argv.project, argv.global);
-} else if (command === 'authors' || command === 'a') {
+} else if (command === 'authors' || command === 'A') {
   commands.authors();
-} else if (command === 'tap' || command === 't') {
+} else if (command === 'tap' || command === 'T') {
   commands.tap(argv.author);
 } else if (command === 'untap' || command === 'ut') {
   commands.untap(argv.author);
-} else if (command === 'reset' || command === 'r') {
+} else if (command === 'reset' || command === 'R') {
   commands.reset();
 } else if (!command) {
   yargs.showHelp();

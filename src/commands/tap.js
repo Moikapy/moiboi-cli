@@ -13,9 +13,9 @@ const tapCommand = author => {
         }
       }
       config.update(newConfig);
-      console.log(`Tapped ${author}`);
+      console.log(`Added ${author} 🎉`);
     } else {
-      console.log(`The author doesn't exist: ${author}`);
+      console.log(`The author doesn't exist 😅: ${author}`);
     }
   });
 };
