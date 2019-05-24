@@ -86,11 +86,11 @@ const command = argv._[0];
 if (command === 'list' || command === 'L') {
   commands.list();
 } else if (command === 'home' || command === 'H') {
-  commands.home(argv['author/bilerpate']);
+  commands.home(argv['author/repo']);
 } else if (command === 'search' || command === 'S') {
   commands.search(argv.keyword, argv.global);
 } else if (command === 'create' || command === 'C') {
-  commands.create(argv.boilerplate, argv.project, argv.global);
+  commands.create(argv.repo, argv.project, argv.global);
 } else if (command === 'authors' || command === 'A') {
   commands.authors();
 } else if (command === 'tap' || command === 'T') {

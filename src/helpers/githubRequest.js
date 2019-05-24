@@ -23,7 +23,7 @@ const fetchBoilerplates = () => {
             item =>
               !item.name.includes(APP_NAME)
           )
-          .map(item => item.full_name.toLowerCase());
+          .map(item => item.full_name);
       });
     })
   ).then(arrayList => {
