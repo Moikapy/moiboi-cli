@@ -101,7 +101,17 @@ if (command === 'list' || command === 'L') {
   commands.reset();
 } else if (!command) {
   yargs.showHelp();
+  console.log("");
+  console.log(
+    "Run moiboi <command> --help for detailed usage of given command."
+  );
+  console.log("");
 } else {
-  console.log(`Not such a command : ❌ '${command}' ❌`);
+  console.log(`Not such a command : ❌  "${command}" ❌`);
   yargs.showHelp();
+  console.log('')
+  console.log(
+    "Run moiboi <command> --help for detailed usage of given command."
+  );
+  console.log("");
 }
