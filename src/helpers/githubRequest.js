@@ -1,8 +1,9 @@
-const axios = require('axios');
-const config = require('../config');
+const axios = require("axios");
+var fs = require("fs");
+const config = require("../config");
 
-const APP_NAME = 'moiboi-cli';
-const DEFAULT_AUTHOR = 'moikapy';
+const APP_NAME = "moiboi-cli";
+const DEFAULT_AUTHOR = "moikapy";
 const PAGE_LIMIT = 100;
 
 const _getFetchURLs = () => {
@@ -19,10 +20,7 @@ const fetchBoilerplates = () => {
     urls.map(url => {
       return axios.get(url).then(res => {
         return res.data
-          .filter(
-            item =>
-              !item.name.includes(APP_NAME)
-          )
+          .filter(item => !item.name.includes(APP_NAME))
           .map(item => item.full_name);
       });
     })
@@ -36,7 +34,7 @@ const fetchBoilerplates = () => {
 };
 
 const fetchRepoNames = keyword => {
-  const keywordParam = keyword ? `+${keyword}` : '';
+  const keywordParam = keyword ? `+${keyword}` : "";
 
   return axios
     .get(
@@ -69,7 +67,31 @@ const isExistingRepo = (user, repo) => {
     });
 };
 
+const renameProjectJson = (targetDirctory, projectDirectory) => {
+  var fileName = `${targetDirctory}/package.json`;
+  var file = require(fileName);
+  // console.log(projectDirectory.substr(0, 3));
+  if ("../" == projectDirectory.substr(0, 3)) {
+    const folder = projectDirectory.substr(3);
+    file.name = `${folder}`;
+    fs.writeFile(fileName, JSON.stringify(file, null, 2), function(err) {
+      if (err) return console.log(err);
+      JSON.stringify(file);
+      console.log("writing to " + fileName);
+    });
+  } else {
+    file.name = `${projectDirectory}`;
+    fs.writeFile(fileName, JSON.stringify(file, null, 2), function(err) {
+      if (err) return console.log(err);
+      JSON.stringify(file);
+      console.log("writing to " + fileName);
+    });
+  }
+  console.log("The Project was created by 🦊   Moiboi!! 🔥  🎉");
+};
+
 module.exports = {
+  renameProjectJson,
   fetchBoilerplates,
   fetchRepoNames,
   isExistingUser,

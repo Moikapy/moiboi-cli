@@ -2,7 +2,9 @@
 
 > [![NPM version][npm-image]][npm-url] [![npm module downloads][npm-downloads-image]][npm-downloads-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url] [![License: MIT][license-image]][license-url]
 
-> CLI using github to turn repos into boilerplates
+## Introduction
+
+Moiboi-cli was created to make setting up projects easier by allowing you to clone repos from github into new directories without having to deal with the trouble of renaming your project file and removing unneeded .git files.
 
 ## Required
 
@@ -22,10 +24,10 @@ $ moiboi -h
 moiboi [command]
 
 Commands:
-  moiboi list                            show all repository                                [aliases: L]
-  moiboi home [author/bilerpate]         go to the github repository                        [aliases: H]
-  moiboi search [keyword]                search repositor                                   [aliases: S]
-  moiboi create [repo] [project]         install the boilerplate into the project directory [aliases: C]
+  moiboi list                            shows all repositories                                [aliases: L]
+  moiboi home [author/repository]         goes to the repository on github                        [aliases: H]
+  moiboi search [keyword]                search for the repository                                   [aliases: S]
+  moiboi clone [repository] [project]         clones repository as new project into target directory [aliases: C]
   moiboi authors                         show all authors of repository                     [aliases: A]
   moiboi add [author]                    add the new author of repository                   [aliases: ad]
   moiboi remove [author]                  remove the author of repository                   [aliases: rm]
@@ -45,7 +47,7 @@ My repositories are included as default.
 ```bash
 $ moiboi add github-username
 $ moiboi search react
-$ moiboi create github-username/react your-project
+$ moiboi clone github-username/react your-project
 ```
 
 ## How to search repositories and create projects with moiboi
@@ -54,7 +56,7 @@ You can expand the range to search and create with '--global' option.
 
 ```bash
 $ moiboi search bootstrap4 -g
-$ moiboi create github-username/bootstrap4 my-project -g
+$ moiboi clone github-username/bootstrap4 my-project -g
 ```
 
 [npm-url]: https://npmjs.org/package/moiboi-cli

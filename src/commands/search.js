@@ -1,13 +1,13 @@
 const {
   fetchBoilerplates,
   fetchRepoNames
-} = require('../helpers/githubRequest');
-const { showItems } = require('../helpers/formattedConsole');
+} = require("../helpers/githubRequest");
+const { showItems } = require("../helpers/formattedConsole");
 
 const searchCommand = (keyword, isGlobal) => {
-  if (!keyword) return console.log('A keyword is missing... 😅');
+  if (!keyword) return console.log("A keyword is missing... 😅");
 
-  console.log('🔎 Search Results 🔍');
+  console.log("🔎 Search Results 🔍");
 
   if (isGlobal) {
     fetchRepoNames(keyword).then(repos => {

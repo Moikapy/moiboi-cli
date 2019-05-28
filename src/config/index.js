@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 const CONFIG_PATH = `${__dirname}/config.json`;
 
 const get = () => {
@@ -15,7 +15,7 @@ const update = updatedConfig => {
 };
 
 const isExistingAuthor = author => {
-  const authors = get()['authors'] || [];
+  const authors = get()["authors"] || [];
   const sameAuthors = authors.filter(thisAuthor => thisAuthor === author);
   if (sameAuthors.length === 0) {
     return false;
