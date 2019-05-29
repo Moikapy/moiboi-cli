@@ -1,12 +1,12 @@
 const opener = require("opener");
 const {
-  fetchBoilerplates,
+  fetchRepositories,
   isExistingRepo
 } = require("../helpers/githubRequest");
 
-const homeCommand = authorAndBoilerpate => {
-  if (authorAndBoilerpate === "moikapy/moiboi-cli") {
-    const url = `https://github.com/${authorAndBoilerpate}`;
+const homeCommand = authorAndRepository => {
+  if (authorAndRepository === "moikapy/moiboi-cli") {
+    const url = `https://github.com/${authorAndRepository}`;
     return opener(url, (err, stdout, stderr) => {
       if (err)
         return console.log(
@@ -15,14 +15,14 @@ const homeCommand = authorAndBoilerpate => {
     });
   }
 
-  const args = authorAndBoilerpate.split("/");
+  const args = authorAndRepository.split("/");
   if (args.length !== 2) {
-    return console.log(`Argument is wrong 👎: ${authorAndBoilerpate}`);
+    return console.log(`Argument is wrong 👎: ${authorAndRepository}`);
   }
 
   isExistingRepo(args[0], args[1]).then(isExisted => {
     if (isExisted) {
-      const url = `https://github.com/${authorAndBoilerpate}`;
+      const url = `https://github.com/${authorAndRepository}`;
       opener(url, (err, stdout, stderr) => {
         if (err)
           return console.log(
@@ -31,7 +31,7 @@ const homeCommand = authorAndBoilerpate => {
       });
     } else {
       return console.log(
-        `Moiboi 🦊   couldn't find the repository 😅: ${authorAndBoilerpate}`
+        `Moiboi 🦊   couldn't find the repository 😅: ${authorAndRepository}`
       );
     }
   });

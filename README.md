@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Moiboi-cli was created to make setting up projects easier by allowing you to clone repos from github into new directories without having to deal with the trouble of renaming your project file and removing unneeded .git files.
+The Moiboi-cli was created with the intention to make setting up projects easier by simplifying the git clone process. What Moiboi allows you to do is search github for any repository you would like to use and clone it into a new project directory all while taking care of removing the .git file and renaming the package.json file (if included).
 
 ## Required
 
@@ -24,14 +24,14 @@ $ moiboi -h
 moiboi [command]
 
 Commands:
-  moiboi list                            shows all repositories                                [aliases: L]
-  moiboi home [author/repository]         goes to the repository on github                        [aliases: H]
-  moiboi search [keyword]                search for the repository                                   [aliases: S]
-  moiboi clone [repository] [project]         clones repository as new project into target directory [aliases: C]
-  moiboi authors                         show all authors of repository                     [aliases: A]
-  moiboi add [author]                    add the new author of repository                   [aliases: ad]
-  moiboi remove [author]                  remove the author of repository                   [aliases: rm]
-  moiboi reset                           reset all configuration to default                 [aliases: R]
+  moiboi list                            shows all repositories                                 [aliases: L]
+  moiboi home [author/repository]        goes to the repository on github                       [aliases: H]
+  moiboi search [keyword]                search for the repository                              [aliases: S]
+  moiboi clone [repository] [project]    clones repository as new project into target directory [aliases: C]
+  moiboi authors                         show all authors of repository                         [aliases: A]
+  moiboi add [author]                    add the new author of repository                       [aliases: ad]
+  moiboi remove [author]                 remove the author of repository                        [aliases: rm]
+  moiboi reset                           reset all configuration to default                     [aliases: R]
 
 Options:
   --version, -v  Show version                                [boolean]
@@ -39,9 +39,9 @@ Options:
   --help, -h     Show help                                   [boolean]
 ```
 
-## How to use github repository as boilerplate
+## How to use github repository as project
 
-You can use this command to use a repository as a boilerplate.
+You can use this command to use a repository as a project.
 My repositories are included as default.
 
 ```bash

@@ -13,7 +13,7 @@ const _getFetchURLs = () => {
   });
 };
 
-const fetchBoilerplates = () => {
+const fetchRepositories = () => {
   const urls = _getFetchURLs();
 
   return Promise.all(
@@ -67,32 +67,39 @@ const isExistingRepo = (user, repo) => {
     });
 };
 
-const renameProjectJson = (targetDirctory, projectDirectory) => {
-  var fileName = `${targetDirctory}/package.json`;
-  var file = require(fileName);
-  // console.log(projectDirectory.substr(0, 3));
-  if ("../" == projectDirectory.substr(0, 3)) {
-    const folder = projectDirectory.substr(3);
-    file.name = `${folder}`;
-    fs.writeFile(fileName, JSON.stringify(file, null, 2), function(err) {
-      if (err) return console.log(err);
-      JSON.stringify(file);
-      console.log("writing to " + fileName);
-    });
-  } else {
-    file.name = `${projectDirectory}`;
-    fs.writeFile(fileName, JSON.stringify(file, null, 2), function(err) {
-      if (err) return console.log(err);
-      JSON.stringify(file);
-      console.log("writing to " + fileName);
-    });
+const renameProjectJson = async (targetDirectory, projectDirectory) => {
+  try {
+    var fileName = `${targetDirectory}/package.json`;
+    var file = require(fileName);
+
+    if (fileName !== null || fileName !== undefined) {
+      if ("../" == projectDirectory.substr(0, 3)) {
+        const folder = projectDirectory.substr(3);
+        file.name = `${folder}`;
+        fs.writeFile(fileName, JSON.stringify(file, null, 2), function(err) {
+          if (err) return console.log(err);
+          JSON.stringify(file);
+          console.log("\n");
+        });
+      } else {
+        file.name = `${projectDirectory}`;
+        fs.writeFile(fileName, JSON.stringify(file, null, 2), function(err) {
+          if (err) return console.log(err);
+          JSON.stringify(file);
+          console.log("\n");
+        });
+      }
+      console.log("The Project was created by 🦊   Moiboi!! 🔥  🎉");
+    }
+  } catch (error) {
+    console.log("\n");
+    console.log("The Project was created by 🦊   Moiboi!! 🔥  🎉");
   }
-  console.log("The Project was created by 🦊   Moiboi!! 🔥  🎉");
 };
 
 module.exports = {
   renameProjectJson,
-  fetchBoilerplates,
+  fetchRepositories,
   fetchRepoNames,
   isExistingUser,
   isExistingRepo
