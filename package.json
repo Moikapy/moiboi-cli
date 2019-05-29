@@ -1,7 +1,7 @@
 {
   "name": "moiboi-cli",
   "version": "0.1.4",
-  "description": "CLI using github to turn repos into boilerplates.",
+  "description": "CLI making Git Clone Simplified",
   "bin": {
     "moiboi": "src/index.js"
   },
@@ -23,7 +23,6 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
-    "json": "^9.0.6",
     "opener": "^1.5.1",
     "readline-sync": "^1.4.9",
     "rimraf": "^2.6.3",

@@ -1,5 +1,5 @@
 const {
-  fetchBoilerplates,
+  fetchRepositories,
   fetchRepoNames
 } = require("../helpers/githubRequest");
 const { showItems } = require("../helpers/formattedConsole");
@@ -14,9 +14,9 @@ const searchCommand = (keyword, isGlobal) => {
       showItems(repos);
     });
   } else {
-    fetchBoilerplates().then(boilerpates => {
-      const items = boilerpates.filter(boilerpate =>
-        boilerpate.includes(keyword)
+    fetchRepositories().then(repositories => {
+      const items = repositories.filter(repository =>
+        repository.includes(keyword)
       );
       showItems(items);
     });
