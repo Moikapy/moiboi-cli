@@ -77,9 +77,11 @@ const argv = yargs
     alias: "g",
     default: false
   })
+  .scriptName("moiboi")
   .help()
   .alias("help", "h")
-  .alias("version", "v").argv;
+  .alias("version", "v")
+  .argv;
 
 const command = argv._[0];
 
