@@ -69,5 +69,3 @@ $ moiboi clone github-username/bootstrap4 my-project -g
 [depstat-image]: https://david-dm.org/moikapy/moiboi-cli.svg
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
-
-- Credit to [keidrun](https://github.com/keidrun/boilerplate-cli) for providing the foundation of this project
