@@ -1,6 +1,6 @@
 {
   "name": "moiboi-cli",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "CLI making Git Clone Simplified",
   "bin": {
     "moiboi": "src/index.js"
