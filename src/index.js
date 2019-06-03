@@ -1,6 +1,7 @@
 #! /usr/bin/env node
-const yargs = require('yargs')
-const commands = require('./commands')
+import '@babel/polyfill'
+import yargs from 'yargs'
+import commands from './commands'
 
 const argv = yargs
   .command({

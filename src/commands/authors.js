@@ -1,4 +1,4 @@
-const config = require('../config')
+import config from '../config'
 
 const authorsCommand = () => {
   const authors = config.get()['authors'] || []
@@ -9,4 +9,4 @@ const authorsCommand = () => {
   })
 }
 
-module.exports = authorsCommand
+export default authorsCommand

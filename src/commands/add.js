@@ -1,5 +1,5 @@
-const config = require('../config')
-const { isExistingUser } = require('../helpers/githubRequest')
+import config from '../config'
+import { isExistingUser } from '../helpers/githubRequest'
 
 const addCommand = author => {
   isExistingUser(author).then(isExisted => {
@@ -21,4 +21,4 @@ const addCommand = author => {
   })
 }
 
-module.exports = addCommand
+export default addCommand

@@ -24,7 +24,7 @@ const isExistingAuthor = author => {
   }
 }
 
-module.exports = {
+export default {
   get,
   update,
   isExistingAuthor,

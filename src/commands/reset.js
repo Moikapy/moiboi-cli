@@ -16,4 +16,4 @@ const resetCommand = () => {
   }
 }
 
-module.exports = resetCommand
+export default resetCommand

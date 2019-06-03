@@ -12,4 +12,4 @@ const removeCommand = author => {
   }
 }
 
-module.exports = removeCommand
+export default removeCommand
