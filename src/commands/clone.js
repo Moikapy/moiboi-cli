@@ -1,11 +1,11 @@
-const {
+import {
   renameProjectJson,
   fetchRepositories,
   fetchRepoNames,
-} = require('../helpers/githubRequest')
-const readlineSync = require('readline-sync')
+} from '../helpers/githubRequest'
+import readlineSync from 'readline-sync'
+import rimraf from 'rimraf'
 const exec = require('child_process').exec
-const rimraf = require('rimraf')
 
 const cloneCommand = (repositoryName, projectDirectory, isGlobal) => {
   const fetch = isGlobal ? fetchRepoNames : fetchRepositories
@@ -59,4 +59,4 @@ const cloneCommand = (repositoryName, projectDirectory, isGlobal) => {
   })
 }
 
-module.exports = cloneCommand
+export default cloneCommand

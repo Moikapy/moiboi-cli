@@ -1,6 +1,6 @@
 const axios = require('axios')
 var fs = require('fs')
-const config = require('../config')
+import config from '../config'
 
 const APP_NAME = 'moiboi-cli'
 const DEFAULT_AUTHOR = 'moikapy'

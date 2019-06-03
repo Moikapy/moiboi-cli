@@ -1,8 +1,5 @@
-const opener = require('opener')
-const {
-  fetchRepositories,
-  isExistingRepo,
-} = require('../helpers/githubRequest')
+import opener from 'opener'
+import { isExistingRepo } from '../helpers/githubRequest'
 
 const homeCommand = authorAndRepository => {
   if (authorAndRepository === 'moikapy/moiboi-cli') {
@@ -10,7 +7,7 @@ const homeCommand = authorAndRepository => {
     return opener(url, (err, stdout, stderr) => {
       if (err)
         return console.log(
-          `Moiboi 🦊   failed to open the repository 😢: ${url}`
+          `Moiboi 🦊   failed to open the repository 😢: ${url}`,
         )
     })
   }
@@ -26,15 +23,15 @@ const homeCommand = authorAndRepository => {
       opener(url, (err, stdout, stderr) => {
         if (err)
           return console.log(
-            `Moiboi 🦊   failed to open the repository 😢: ${url}`
+            `Moiboi 🦊   failed to open the repository 😢: ${url}`,
           )
       })
     } else {
       return console.log(
-        `Moiboi 🦊   couldn't find the repository 😅: ${authorAndRepository}`
+        `Moiboi 🦊   couldn't find the repository 😅: ${authorAndRepository}`,
       )
     }
   })
 }
 
-module.exports = homeCommand
+export default homeCommand

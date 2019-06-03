@@ -23,4 +23,4 @@ const searchCommand = (keyword, isGlobal) => {
   }
 }
 
-module.exports = searchCommand
+export default searchCommand
