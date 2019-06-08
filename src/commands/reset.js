@@ -1,5 +1,5 @@
-const config = require('../config')
-const readlineSync = require('readline-sync')
+import config from '../config'
+import readlineSync from 'readline-sync'
 
 const DEFAULT_JSON = {
   authors: ['moikapy', 'nodegg'],
@@ -12,7 +12,7 @@ const resetCommand = () => {
   console.log(answer)
   if (answer === 'y') {
     config.update(DEFAULT_JSON)
-    console.log('Moiboi 🦊   reset all Configurations  🐱‍🐉  🔥')
+    console.log('Moiboi 🦊   has reset all Configurations  🐱‍🐉  🔥')
   }
 }
 

@@ -4,6 +4,8 @@ import cloneCommand from './clone';
 import homeCommand from './home';
 import listCommand from './list'
 import removeCommand from './remove'
+import resetCommand from './reset';
+///
 export default {
   add: addCommand,
   authors: authorsCommand,
@@ -11,7 +13,7 @@ export default {
   home: homeCommand,
   list: listCommand,
   remove: removeCommand,
-  reset: require('./reset'),
+  reset: resetCommand,
   search: require('./search'),
 }
 
