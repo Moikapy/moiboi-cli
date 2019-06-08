@@ -8,4 +8,4 @@ const listCommand = () => {
   })
 }
 
-module.exports = listCommand
+export default listCommand
