@@ -1,10 +1,20 @@
-module.exports = {
-  list: require("./list"),
-  home: require("./home"),
-  search: require("./search"),
-  clone: require("./clone"),
-  authors: require("./authors"),
-  add: require("./add"),
-  remove: require("./remove"),
-  reset: require("./reset")
-};
+import addCommand from './add'
+import authorsCommand from './authors'
+import cloneCommand from './clone';
+import homeCommand from './home';
+import listCommand from './list'
+import removeCommand from './remove'
+import resetCommand from './reset';
+import searchCommand from './search';
+///
+export default {
+  add: addCommand,
+  authors: authorsCommand,
+  clone: cloneCommand,
+  home: homeCommand,
+  list: listCommand,
+  remove: removeCommand,
+  reset: resetCommand,
+  search: searchCommand,
+}
+
