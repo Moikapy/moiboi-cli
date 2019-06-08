@@ -1,12 +1,20 @@
 "use strict";
 
-var fs = require('fs');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _fs = _interopRequireDefault(require("fs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var CONFIG_PATH = "".concat(__dirname, "/config.json");
 
 var get = function get() {
   try {
-    var json = fs.readFileSync(CONFIG_PATH);
+    var json = _fs["default"].readFileSync(CONFIG_PATH);
+
     return JSON.parse(json);
   } catch (err) {
     return {};
@@ -14,7 +22,7 @@ var get = function get() {
 };
 
 var update = function update(updatedConfig) {
-  fs.writeFileSync(CONFIG_PATH, JSON.stringify(updatedConfig));
+  _fs["default"].writeFileSync(CONFIG_PATH, JSON.stringify(updatedConfig));
 };
 
 var isExistingAuthor = function isExistingAuthor(author) {
@@ -30,8 +38,9 @@ var isExistingAuthor = function isExistingAuthor(author) {
   }
 };
 
-module.exports = {
+var _default = {
   get: get,
   update: update,
   isExistingAuthor: isExistingAuthor
 };
+exports["default"] = _default;

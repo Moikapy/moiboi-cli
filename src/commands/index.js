@@ -5,6 +5,7 @@ import homeCommand from './home';
 import listCommand from './list'
 import removeCommand from './remove'
 import resetCommand from './reset';
+import searchCommand from './search';
 ///
 export default {
   add: addCommand,
@@ -14,6 +15,6 @@ export default {
   list: listCommand,
   remove: removeCommand,
   reset: resetCommand,
-  search: require('./search'),
+  search: searchCommand,
 }
 

@@ -1,28 +1,33 @@
 "use strict";
 
-var _require = require('../helpers/githubRequest'),
-    fetchRepositories = _require.fetchRepositories,
-    fetchRepoNames = _require.fetchRepoNames;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
-var _require2 = require('../helpers/formattedConsole'),
-    showItems = _require2.showItems;
+var _githubRequest = require("../helpers/githubRequest");
+
+var _formattedConsole = _interopRequireDefault(require("../helpers/formattedConsole"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var searchCommand = function searchCommand(keyword, isGlobal) {
   if (!keyword) return console.log('A keyword is missing... 😅');
   console.log('🔎 Search Results 🔍');
 
   if (isGlobal) {
-    fetchRepoNames(keyword).then(function (repos) {
-      showItems(repos);
+    (0, _githubRequest.fetchRepoNames)(keyword).then(function (repos) {
+      (0, _formattedConsole["default"])(repos);
     });
   } else {
-    fetchRepositories().then(function (repositories) {
+    (0, _githubRequest.fetchRepositories)().then(function (repositories) {
       var items = repositories.filter(function (repository) {
         return repository.includes(keyword);
       });
-      showItems(items);
+      (0, _formattedConsole["default"])(items);
     });
   }
 };
 
-module.exports = searchCommand;
+var _default = searchCommand;
+exports["default"] = _default;

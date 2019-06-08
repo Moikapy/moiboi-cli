@@ -1,17 +1,28 @@
 "use strict";
 
-var config = require('../config');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _config = _interopRequireDefault(require("../config"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var removeCommand = function removeCommand(author) {
-  if (config.isExistingAuthor(author)) {
-    var newConfig = config.get();
+  if (_config["default"].isExistingAuthor(author)) {
+    var newConfig = _config["default"].get();
+
     var newAuthors = newConfig['authors'].filter(function (thisAuthor) {
       return thisAuthor !== author;
     });
     newConfig['authors'] = newAuthors;
-    config.update(newConfig);
+
+    _config["default"].update(newConfig);
+
     console.log("Removed ".concat(author, " \uD83D\uDC94"));
   }
 };
 
-module.exports = removeCommand;
+var _default = removeCommand;
+exports["default"] = _default;

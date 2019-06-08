@@ -3,7 +3,7 @@
 	"version": "0.1.6",
 	"description": "CLI making Git Clone Simplified",
 	"bin": {
-		"moiboi": "src/index.js"
+		"moiboi": "dist/index.js"
 	},
 	"preferGlobal": true,
 	"keywords": [
@@ -19,7 +19,7 @@
 		"generator"
 	],
 	"repository": "https://github.com/Moikapy/moiboi-cli.git",
-	"author": "moikapy",
+	"author": "Moikapy",
 	"license": "MIT",
 	"dependencies": {
 		"@babel/polyfill": "^7.4.4",

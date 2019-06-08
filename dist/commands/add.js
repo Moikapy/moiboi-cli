@@ -1,24 +1,31 @@
 "use strict";
 
-var config = require('../config');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
-var _require = require('../helpers/githubRequest'),
-    isExistingUser = _require.isExistingUser;
+var _config = _interopRequireDefault(require("../config"));
+
+var _githubRequest = require("../helpers/githubRequest");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var addCommand = function addCommand(author) {
-  isExistingUser(author).then(function (isExisted) {
+  (0, _githubRequest.isExistingUser)(author).then(function (isExisted) {
     if (isExisted) {
-      var newConfig = config.get();
+      var newConfig = _config["default"].get();
 
       if (!newConfig['authors']) {
         newConfig['authors'] = [author];
       } else {
-        if (!config.isExistingAuthor(author)) {
+        if (!_config["default"].isExistingAuthor(author)) {
           newConfig['authors'].push(author);
         }
       }
 
-      config.update(newConfig);
+      _config["default"].update(newConfig);
+
       console.log("Added ".concat(author, " \uD83C\uDF89"));
     } else {
       console.log("This User doesn't exist \uD83D\uDE05: ".concat(author));
@@ -27,4 +34,5 @@ var addCommand = function addCommand(author) {
   });
 };
 
-module.exports = addCommand;
+var _default = addCommand;
+exports["default"] = _default;

@@ -7,7 +7,7 @@ const homeCommand = authorAndRepository => {
     return opener(url, (err, stdout, stderr) => {
       if (err)
         return console.log(
-          `Moiboi 🦊   failed to open the repository 😢: ${url}`,
+          `Moiboi 🦊   has failed to open the repository 😢: ${url}`,
         )
     })
   }
@@ -23,7 +23,7 @@ const homeCommand = authorAndRepository => {
       opener(url, (err, stdout, stderr) => {
         if (err)
           return console.log(
-            `Moiboi 🦊   failed to open the repository 😢: ${url}`,
+            `Moiboi 🦊   has failed to open the repository 😢: ${url}`,
           )
       })
     } else {

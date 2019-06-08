@@ -1,8 +1,8 @@
-const {
+import {
   fetchRepositories,
   fetchRepoNames,
-} = require('../helpers/githubRequest')
-const { showItems } = require('../helpers/formattedConsole')
+} from '../helpers/githubRequest'
+import showItems from '../helpers/formattedConsole'
 
 const searchCommand = (keyword, isGlobal) => {
   if (!keyword) return console.log('A keyword is missing... 😅')

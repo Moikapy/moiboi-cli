@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs from 'fs'
 const CONFIG_PATH = `${__dirname}/config.json`
 
 const get = () => {

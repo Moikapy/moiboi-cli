@@ -1,5 +1,10 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
 var showItems = function showItems(items) {
   items.forEach(function (item) {
     console.log(item);
@@ -7,6 +12,5 @@ var showItems = function showItems(items) {
   console.log("Total: ".concat(items.length, " \uD83D\uDE0E"));
 };
 
-module.exports = {
-  showItems: showItems
-};
+var _default = showItems;
+exports["default"] = _default;

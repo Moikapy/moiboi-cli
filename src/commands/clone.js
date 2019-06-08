@@ -27,7 +27,7 @@ const cloneCommand = (repositoryName, projectDirectory, isGlobal) => {
       console.log(`Directory: ${targetDirectory}`)
       console.log('\n')
       const answer = readlineSync.question(
-        `Your Project will be created Moiboi. Is that ok? (Y/n)  `,
+        `Your Project will be created by Moiboi. Is that ok? (Y/n)  `,
       )
       console.log('\n')
       if (answer === 'y') {
@@ -46,7 +46,7 @@ const cloneCommand = (repositoryName, projectDirectory, isGlobal) => {
               rimraf(`${targetDirectory}/.git`, err => {
                 if (err)
                   return console.log(
-                    `Moiboi 🦊   failed to remove exsiting git files 😢  : ${stderr}`,
+                    `Moiboi 🦊   has failed to remove exsiting git files 😢  : ${stderr}`,
                   )
               })
 

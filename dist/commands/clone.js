@@ -1,18 +1,22 @@
 "use strict";
 
-var _require = require('../helpers/githubRequest'),
-    renameProjectJson = _require.renameProjectJson,
-    fetchRepositories = _require.fetchRepositories,
-    fetchRepoNames = _require.fetchRepoNames;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
-var readlineSync = require('readline-sync');
+var _githubRequest = require("../helpers/githubRequest");
+
+var _readlineSync = _interopRequireDefault(require("readline-sync"));
+
+var _rimraf = _interopRequireDefault(require("rimraf"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var exec = require('child_process').exec;
 
-var rimraf = require('rimraf');
-
 var cloneCommand = function cloneCommand(repositoryName, projectDirectory, isGlobal) {
-  var fetch = isGlobal ? fetchRepoNames : fetchRepositories;
+  var fetch = isGlobal ? _githubRequest.fetchRepoNames : _githubRequest.fetchRepositories;
   fetch().then(function (repositories) {
     var targetRepository = repositories.filter(function (repository) {
       return repository.includes(repositoryName);
@@ -26,7 +30,9 @@ var cloneCommand = function cloneCommand(repositoryName, projectDirectory, isGlo
       console.log("Repository: ".concat(targetRepository));
       console.log("Directory: ".concat(targetDirectory));
       console.log('\n');
-      var answer = readlineSync.question("Your Project will be created Moiboi. Is that ok? (Y/n)  ");
+
+      var answer = _readlineSync["default"].question("Your Project will be created by Moiboi. Is that ok? (Y/n)  ");
+
       console.log('\n');
 
       if (answer === 'y') {
@@ -35,10 +41,10 @@ var cloneCommand = function cloneCommand(repositoryName, projectDirectory, isGlo
           if (err) return console.log("You must install 'git' in advance \uD83E\uDD13.");
           exec("git clone https://github.com/".concat(targetRepository, " ").concat(targetDirectory), function (err, stdout, stderr) {
             if (err) return console.log("Moiboi \uD83E\uDD8A   has failed to clone the repository: ".concat(stderr, " \uD83D\uDE22"));
-            rimraf("".concat(targetDirectory, "/.git"), function (err) {
-              if (err) return console.log("Moiboi \uD83E\uDD8A   failed to remove exsiting git files \uD83D\uDE22  : ".concat(stderr));
+            (0, _rimraf["default"])("".concat(targetDirectory, "/.git"), function (err) {
+              if (err) return console.log("Moiboi \uD83E\uDD8A   has failed to remove exsiting git files \uD83D\uDE22  : ".concat(stderr));
             });
-            renameProjectJson(targetDirectory, projectDirectory);
+            (0, _githubRequest.renameProjectJson)(targetDirectory, projectDirectory);
           });
         });
       }
@@ -46,4 +52,5 @@ var cloneCommand = function cloneCommand(repositoryName, projectDirectory, isGlo
   });
 };
 
-module.exports = cloneCommand;
+var _default = cloneCommand;
+exports["default"] = _default;

@@ -6,6 +6,4 @@ const showItems = items => {
   console.log(`Total: ${items.length} 😎`)
 }
 
-module.exports = {
-  showItems,
-}
+export default showItems

@@ -1,5 +1,5 @@
-const axios = require('axios')
-var fs = require('fs')
+import axios from 'axios'
+import fs from 'fs'
 import config from '../config'
 
 const APP_NAME = 'moiboi-cli'
@@ -97,7 +97,7 @@ const renameProjectJson = async (targetDirectory, projectDirectory) => {
   }
 }
 
-module.exports = {
+export {
   renameProjectJson,
   fetchRepositories,
   fetchRepoNames,

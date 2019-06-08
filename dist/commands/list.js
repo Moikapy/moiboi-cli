@@ -1,16 +1,22 @@
 "use strict";
 
-var _require = require('../helpers/githubRequest'),
-    fetchRepositories = _require.fetchRepositories;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
-var _require2 = require('../helpers/formattedConsole'),
-    showItems = _require2.showItems;
+var _githubRequest = require("../helpers/githubRequest");
+
+var _formattedConsole = _interopRequireDefault(require("../helpers/formattedConsole"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var listCommand = function listCommand() {
-  fetchRepositories().then(function (repositories) {
+  (0, _githubRequest.fetchRepositories)().then(function (repositories) {
     console.log('✔ Available Repositiries ✔');
-    showItems(repositories);
+    (0, _formattedConsole["default"])(repositories);
   });
 };
 
-module.exports = listCommand;
+var _default = listCommand;
+exports["default"] = _default;
