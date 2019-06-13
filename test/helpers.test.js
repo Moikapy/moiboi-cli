@@ -1,7 +1,8 @@
+import '@babel/polyfill'
 const should = require('chai').should()
 const nock = require('nock')
 
-const { isExistingUser } = require('../src/helpers/githubRequest')
+import {isExistingUser} from '../src/helpers/githubRequest'
 
 describe('githubRequest-test', function() {
   describe('isExistingUser-test', function() {
