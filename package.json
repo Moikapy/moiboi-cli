@@ -1,6 +1,6 @@
 {
 	"name": "moiboi-cli",
-	"version": "0.2.0",
+	"version": "0.1.6",
 	"description": "CLI making Git Clone Simplified",
 	"bin": {
 		"moiboi": "dist/index.js"
@@ -33,7 +33,7 @@
 		"dev": "babel-node src/index.js",
 		"build": "babel src -d dist",
 		"start": "node dist/index.js",
-		"test": "mocha",
+		"test": "mocha --require @babel/register",
 		"watch": "mocha --watch",
 		"format": "prettier --single-quote --write './{src}/**/*.js'"
 	},
